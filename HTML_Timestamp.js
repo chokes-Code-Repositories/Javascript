@@ -34,7 +34,7 @@ function formatTimestamp(text) {
           case 't':
             return formatTime(unixTimestamp, false);
           default:
-            return match; // Unknown format, return the original match
+            return `Invalid unix timestamp format: ${format}`
         }
     });
 }
