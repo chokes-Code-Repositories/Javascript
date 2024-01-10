@@ -1,5 +1,20 @@
+/*
+
+Hosted on Cloudflare Workers
+
+Valid Endpoints:
+- /v1/users/avatar
+- /v1/users/avatar-bust
+- /v1/users/avatar-headshot
+
+Valid Parameters:
+userId=<USERID>
+size=<sizes found in the validSizes array>
+
+*/
+
 // src/worker.js
-var cacheDuration = 300 * 1e3;
+var cacheDuration = 300 * 1e3; // cached for 5 minutes
 var expirationTime = Date.now() + cacheDuration;
 var apiUrl = "https://thumbnails.roblox.com";
 var validSizes = [
